@@ -28,7 +28,7 @@ final class SongLoadingCell: UITableViewCell {
         return stack
     }()
 
-    private var loadingLabel: UILabel = {
+    var loadingLabel: UILabel = {
         let label = UILabel()
         label.text = "LOADING..."
         label.font = .systemFont(ofSize: 14)

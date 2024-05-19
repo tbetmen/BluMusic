@@ -16,11 +16,6 @@ protocol SearchViewModelInterface {
 
 final class SearchViewModel: SearchViewModelInterface {
     private let searchService: SearchServiceInterface
-    private var searchTask: APIServiceCancellableInterface? {
-        willSet {
-            self.searchTask?.cancel()
-        }
-    }
 
     enum ResultState {
         case songs

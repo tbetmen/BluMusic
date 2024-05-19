@@ -23,6 +23,21 @@
 		035F0B132BF8F5F400AAB0C0 /* SearchTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B122BF8F5F400AAB0C0 /* SearchTableDelegate.swift */; };
 		035F0B152BF8FC2000AAB0C0 /* SongEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B142BF8FC2000AAB0C0 /* SongEmptyCell.swift */; };
 		035F0B172BF8FC2D00AAB0C0 /* SongLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B162BF8FC2D00AAB0C0 /* SongLoadingCell.swift */; };
+		035F0B2D2BF92D1700AAB0C0 /* MockAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B2C2BF92D1700AAB0C0 /* MockAPIEndpoint.swift */; };
+		035F0B2F2BF92D3C00AAB0C0 /* MockAPIServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B2E2BF92D3C00AAB0C0 /* MockAPIServiceConfig.swift */; };
+		035F0B312BF92D6200AAB0C0 /* MockAPIServiceErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B302BF92D6200AAB0C0 /* MockAPIServiceErrorLogger.swift */; };
+		035F0B332BF92D8000AAB0C0 /* MockAPISessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B322BF92D8000AAB0C0 /* MockAPISessionManager.swift */; };
+		035F0B362BF92DAF00AAB0C0 /* APIPathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B352BF92DAF00AAB0C0 /* APIPathTest.swift */; };
+		035F0B382BF92DD700AAB0C0 /* APIServiceConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B372BF92DD700AAB0C0 /* APIServiceConfigTests.swift */; };
+		035F0B3A2BF92DF200AAB0C0 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B392BF92DF200AAB0C0 /* APIServiceTests.swift */; };
+		035F0B3C2BF92E0800AAB0C0 /* DataTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B3B2BF92E0800AAB0C0 /* DataTransferServiceTests.swift */; };
+		035F0B402BF930E100AAB0C0 /* MockDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B3F2BF930E100AAB0C0 /* MockDataTransferService.swift */; };
+		035F0B422BF9341D00AAB0C0 /* SearchServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B412BF9341D00AAB0C0 /* SearchServiceTest.swift */; };
+		035F0B462BF9363C00AAB0C0 /* MockSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B452BF9363B00AAB0C0 /* MockSearchService.swift */; };
+		035F0B482BF9374500AAB0C0 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B472BF9374500AAB0C0 /* SearchViewModelTest.swift */; };
+		035F0B4D2BF93A0500AAB0C0 /* SearchTableDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B4C2BF93A0500AAB0C0 /* SearchTableDataSourceTest.swift */; };
+		035F0B4F2BF93A1200AAB0C0 /* SearchTableDelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B4E2BF93A1200AAB0C0 /* SearchTableDelegateTest.swift */; };
+		035F0B512BF93A4400AAB0C0 /* MockSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F0B502BF93A4400AAB0C0 /* MockSearchViewModel.swift */; };
 		03DD9FF52BF8927E00A44ABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DD9FF42BF8927E00A44ABE /* AppDelegate.swift */; };
 		03DD9FF92BF8927E00A44ABE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DD9FF82BF8927E00A44ABE /* SearchViewController.swift */; };
 		03DD9FFE2BF8928000A44ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DD9FFD2BF8928000A44ABE /* Assets.xcassets */; };
@@ -34,6 +49,16 @@
 		03DDA0162BF8A09300A44ABE /* SongPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDA0152BF8A09300A44ABE /* SongPlayerView.swift */; };
 		03DDA0182BF8A09D00A44ABE /* SongPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DDA0172BF8A09D00A44ABE /* SongPlayerView.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		035F0B252BF92CBD00AAB0C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03DD9FE92BF8927E00A44ABE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03DD9FF02BF8927E00A44ABE;
+			remoteInfo = BluMusic;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		035F0AF22BF8BCCB00AAB0C0 /* CMT+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMT+Extension.swift"; sourceTree = "<group>"; };
@@ -52,6 +77,22 @@
 		035F0B122BF8F5F400AAB0C0 /* SearchTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableDelegate.swift; sourceTree = "<group>"; };
 		035F0B142BF8FC2000AAB0C0 /* SongEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongEmptyCell.swift; sourceTree = "<group>"; };
 		035F0B162BF8FC2D00AAB0C0 /* SongLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongLoadingCell.swift; sourceTree = "<group>"; };
+		035F0B212BF92CBD00AAB0C0 /* BluMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		035F0B2C2BF92D1700AAB0C0 /* MockAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIEndpoint.swift; sourceTree = "<group>"; };
+		035F0B2E2BF92D3C00AAB0C0 /* MockAPIServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIServiceConfig.swift; sourceTree = "<group>"; };
+		035F0B302BF92D6200AAB0C0 /* MockAPIServiceErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIServiceErrorLogger.swift; sourceTree = "<group>"; };
+		035F0B322BF92D8000AAB0C0 /* MockAPISessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPISessionManager.swift; sourceTree = "<group>"; };
+		035F0B352BF92DAF00AAB0C0 /* APIPathTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPathTest.swift; sourceTree = "<group>"; };
+		035F0B372BF92DD700AAB0C0 /* APIServiceConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceConfigTests.swift; sourceTree = "<group>"; };
+		035F0B392BF92DF200AAB0C0 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		035F0B3B2BF92E0800AAB0C0 /* DataTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTests.swift; sourceTree = "<group>"; };
+		035F0B3F2BF930E100AAB0C0 /* MockDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataTransferService.swift; sourceTree = "<group>"; };
+		035F0B412BF9341D00AAB0C0 /* SearchServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceTest.swift; sourceTree = "<group>"; };
+		035F0B452BF9363B00AAB0C0 /* MockSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchService.swift; sourceTree = "<group>"; };
+		035F0B472BF9374500AAB0C0 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
+		035F0B4C2BF93A0500AAB0C0 /* SearchTableDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableDataSourceTest.swift; sourceTree = "<group>"; };
+		035F0B4E2BF93A1200AAB0C0 /* SearchTableDelegateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableDelegateTest.swift; sourceTree = "<group>"; };
+		035F0B502BF93A4400AAB0C0 /* MockSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchViewModel.swift; sourceTree = "<group>"; };
 		03DD9FF12BF8927E00A44ABE /* BluMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DD9FF42BF8927E00A44ABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03DD9FF82BF8927E00A44ABE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +107,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		035F0B1E2BF92CBD00AAB0C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03DD9FEE2BF8927E00A44ABE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,10 +220,89 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		035F0B222BF92CBD00AAB0C0 /* BluMusicTests */ = {
+			isa = PBXGroup;
+			children = (
+				035F0B3E2BF930C500AAB0C0 /* Search */,
+				035F0B2A2BF92CF800AAB0C0 /* Common */,
+			);
+			path = BluMusicTests;
+			sourceTree = "<group>";
+		};
+		035F0B2A2BF92CF800AAB0C0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				035F0B2B2BF92CFE00AAB0C0 /* Networking */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		035F0B2B2BF92CFE00AAB0C0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				035F0B342BF92DA500AAB0C0 /* Mock */,
+				035F0B352BF92DAF00AAB0C0 /* APIPathTest.swift */,
+				035F0B372BF92DD700AAB0C0 /* APIServiceConfigTests.swift */,
+				035F0B392BF92DF200AAB0C0 /* APIServiceTests.swift */,
+				035F0B3B2BF92E0800AAB0C0 /* DataTransferServiceTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		035F0B342BF92DA500AAB0C0 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				035F0B2C2BF92D1700AAB0C0 /* MockAPIEndpoint.swift */,
+				035F0B2E2BF92D3C00AAB0C0 /* MockAPIServiceConfig.swift */,
+				035F0B302BF92D6200AAB0C0 /* MockAPIServiceErrorLogger.swift */,
+				035F0B322BF92D8000AAB0C0 /* MockAPISessionManager.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		035F0B3D2BF9306E00AAB0C0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				035F0B3F2BF930E100AAB0C0 /* MockDataTransferService.swift */,
+				035F0B412BF9341D00AAB0C0 /* SearchServiceTest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		035F0B3E2BF930C500AAB0C0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				035F0B492BF939A200AAB0C0 /* View */,
+				035F0B442BF9360B00AAB0C0 /* ViewModel */,
+				035F0B3D2BF9306E00AAB0C0 /* Service */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		035F0B442BF9360B00AAB0C0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				035F0B452BF9363B00AAB0C0 /* MockSearchService.swift */,
+				035F0B472BF9374500AAB0C0 /* SearchViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		035F0B492BF939A200AAB0C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				035F0B4C2BF93A0500AAB0C0 /* SearchTableDataSourceTest.swift */,
+				035F0B4E2BF93A1200AAB0C0 /* SearchTableDelegateTest.swift */,
+				035F0B502BF93A4400AAB0C0 /* MockSearchViewModel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		03DD9FE82BF8927E00A44ABE = {
 			isa = PBXGroup;
 			children = (
 				03DD9FF32BF8927E00A44ABE /* BluMusic */,
+				035F0B222BF92CBD00AAB0C0 /* BluMusicTests */,
 				03DD9FF22BF8927E00A44ABE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -184,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				03DD9FF12BF8927E00A44ABE /* BluMusic.app */,
+				035F0B212BF92CBD00AAB0C0 /* BluMusicTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,6 +353,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		035F0B202BF92CBD00AAB0C0 /* BluMusicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 035F0B272BF92CBD00AAB0C0 /* Build configuration list for PBXNativeTarget "BluMusicTests" */;
+			buildPhases = (
+				035F0B1D2BF92CBD00AAB0C0 /* Sources */,
+				035F0B1E2BF92CBD00AAB0C0 /* Frameworks */,
+				035F0B1F2BF92CBD00AAB0C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				035F0B262BF92CBD00AAB0C0 /* PBXTargetDependency */,
+			);
+			name = BluMusicTests;
+			productName = BluMusicTests;
+			productReference = 035F0B212BF92CBD00AAB0C0 /* BluMusicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		03DD9FF02BF8927E00A44ABE /* BluMusic */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03DDA0052BF8928000A44ABE /* Build configuration list for PBXNativeTarget "BluMusic" */;
@@ -255,6 +401,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					035F0B202BF92CBD00AAB0C0 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 03DD9FF02BF8927E00A44ABE;
+					};
 					03DD9FF02BF8927E00A44ABE = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -277,11 +427,19 @@
 			projectRoot = "";
 			targets = (
 				03DD9FF02BF8927E00A44ABE /* BluMusic */,
+				035F0B202BF92CBD00AAB0C0 /* BluMusicTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		035F0B1F2BF92CBD00AAB0C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03DD9FEF2BF8927E00A44ABE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +453,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		035F0B1D2BF92CBD00AAB0C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				035F0B512BF93A4400AAB0C0 /* MockSearchViewModel.swift in Sources */,
+				035F0B462BF9363C00AAB0C0 /* MockSearchService.swift in Sources */,
+				035F0B2F2BF92D3C00AAB0C0 /* MockAPIServiceConfig.swift in Sources */,
+				035F0B362BF92DAF00AAB0C0 /* APIPathTest.swift in Sources */,
+				035F0B3C2BF92E0800AAB0C0 /* DataTransferServiceTests.swift in Sources */,
+				035F0B4F2BF93A1200AAB0C0 /* SearchTableDelegateTest.swift in Sources */,
+				035F0B312BF92D6200AAB0C0 /* MockAPIServiceErrorLogger.swift in Sources */,
+				035F0B4D2BF93A0500AAB0C0 /* SearchTableDataSourceTest.swift in Sources */,
+				035F0B402BF930E100AAB0C0 /* MockDataTransferService.swift in Sources */,
+				035F0B482BF9374500AAB0C0 /* SearchViewModelTest.swift in Sources */,
+				035F0B422BF9341D00AAB0C0 /* SearchServiceTest.swift in Sources */,
+				035F0B332BF92D8000AAB0C0 /* MockAPISessionManager.swift in Sources */,
+				035F0B382BF92DD700AAB0C0 /* APIServiceConfigTests.swift in Sources */,
+				035F0B3A2BF92DF200AAB0C0 /* APIServiceTests.swift in Sources */,
+				035F0B2D2BF92D1700AAB0C0 /* MockAPIEndpoint.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03DD9FED2BF8927E00A44ABE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,6 +506,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		035F0B262BF92CBD00AAB0C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03DD9FF02BF8927E00A44ABE /* BluMusic */;
+			targetProxy = 035F0B252BF92CBD00AAB0C0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		03DD9FFF2BF8928000A44ABE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -338,6 +526,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		035F0B282BF92CBD00AAB0C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = ZNSUAA9FB3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.exception.BluMusicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BluMusic.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BluMusic";
+			};
+			name = Debug;
+		};
+		035F0B292BF92CBD00AAB0C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = ZNSUAA9FB3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.exception.BluMusicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BluMusic.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BluMusic";
+			};
+			name = Release;
+		};
 		03DDA0032BF8928000A44ABE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -524,6 +750,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		035F0B272BF92CBD00AAB0C0 /* Build configuration list for PBXNativeTarget "BluMusicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				035F0B282BF92CBD00AAB0C0 /* Debug */,
+				035F0B292BF92CBD00AAB0C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		03DD9FEC2BF8927E00A44ABE /* Build configuration list for PBXProject "BluMusic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

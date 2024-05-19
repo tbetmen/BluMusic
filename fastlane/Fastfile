@@ -26,6 +26,8 @@ APPLE_KEY_CONTENT = ENV["ASC_KEY"]
 GIT_AUTHORIZATION = ENV["GIT_AUTHORIZATION"]
 PROVISIONING_PROFILE_SPECIFIER = ENV["PROVISIONING_PROFILE_SPECIFIER"]
 PROVISIONING_PROFILE_ID = ENV["PROVISIONING_PROFILE_ID"]
+PROJECT = "BluMusic.xcodeproj"
+SCHEME = "BluMusic"
 
 def delete_temp_keychain(name)
   delete_keychain(
@@ -53,7 +55,6 @@ platform :ios do
     keychain_name = TEMP_KEYCHAIN_USER
     keychain_password = TEMP_KEYCHAIN_PASSWORD
     output_name = "BluMusic"
-    project = "BluMusic.xcodeproj"
     ensure_temp_keychain(keychain_name, keychain_password)
 
     api_key = app_store_connect_api_key(
@@ -65,7 +66,7 @@ platform :ios do
       in_house: false
     )
 
-    increment_build_number(xcodeproj: project)
+    increment_build_number(xcodeproj: PROJECT)
 
     match(
       type: 'development',
@@ -89,8 +90,8 @@ platform :ios do
 
     gym(
       configuration: "Release",
-      project: project,
-      scheme: "BluMusic",
+      project: PROJECT,
+      scheme: SCHEME,
       output_name: output_name,
       export_method: "app-store",
       export_options: {
@@ -124,5 +125,37 @@ platform :ios do
       development: true,
       force: true
     )
+  end
+
+  desc "Run unit testing"
+  lane :unit_test do
+    run_tests(
+      project: PROJECT,
+      scheme: SCHEME,
+      clean: true,
+      output_directory: "test_result",
+      configuration: "Debug",
+      device: "iPhone SE (3rd generation)"
+    )
+  end
+
+  desc "Gather code coverage from unit test"
+  lane :code_coverage do
+    if File.directory?("../test_result")
+      FileUtils.remove_dir("../test_result")
+    end
+    xcov(
+      project: PROJECT,
+      scheme: SCHEME,
+      configuration: "Debug",
+      output_directory: "test_result",
+      only_project_targets: true
+    )
+  end
+
+  desc "Run Unit Test and Code Coverage"
+  lane :test_report do
+    unit_test
+    code_coverage
   end
 end

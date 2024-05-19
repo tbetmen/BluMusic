@@ -66,3 +66,5 @@ fastlane/test_output
 *.env
 
 *.mobileprovision
+
+test_result/

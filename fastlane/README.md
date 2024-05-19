@@ -31,6 +31,30 @@ Push a new beta build to TestFlight
 
 Download provisioning profile for development
 
+### ios unit_test
+
+```sh
+[bundle exec] fastlane ios unit_test
+```
+
+Run unit testing
+
+### ios code_coverage
+
+```sh
+[bundle exec] fastlane ios code_coverage
+```
+
+Gather code coverage from unit test
+
+### ios test_report
+
+```sh
+[bundle exec] fastlane ios test_report
+```
+
+Run Unit Test and Code Coverage
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
