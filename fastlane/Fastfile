@@ -1,0 +1,128 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+DEVELOPER_APP_ID = ENV["DEVELOPER_APP_ID"]
+DEVELOPER_APP_IDENTIFIER = ENV["DEVELOPER_APP_IDENTIFIER"]
+MATCH_PASSWORD = ENV["MATCH_PASSWORD"]
+TEMP_KEYCHAIN_USER = ENV["TEMP_KEYCHAIN_USER"]
+TEMP_KEYCHAIN_PASSWORD = ENV["TEMP_KEYCHAIN_PASSWORD"]
+APPLE_ISSUER_ID = ENV["ASC_ISSUER_ID"]
+APPLE_KEY_ID = ENV["ASC_KEY_ID"]
+APPLE_KEY_CONTENT = ENV["ASC_KEY"]
+GIT_AUTHORIZATION = ENV["GIT_AUTHORIZATION"]
+PROVISIONING_PROFILE_SPECIFIER = ENV["PROVISIONING_PROFILE_SPECIFIER"]
+PROVISIONING_PROFILE_ID = ENV["PROVISIONING_PROFILE_ID"]
+
+def delete_temp_keychain(name)
+  delete_keychain(
+    name: name
+  ) if File.exist? File.expand_path("~/Library/Keychains/#{name}-db")
+end
+
+def create_temp_keychain(name, password)
+  create_keychain(
+    name: name,
+    password: password,
+    unlock: false,
+    timeout: 0
+  )
+end
+
+def ensure_temp_keychain(name, password)
+  delete_temp_keychain(name)
+  create_temp_keychain(name, password)
+end
+
+platform :ios do
+  desc "Push a new beta build to TestFlight"
+  lane :upload_beta_testflight do
+    keychain_name = TEMP_KEYCHAIN_USER
+    keychain_password = TEMP_KEYCHAIN_PASSWORD
+    output_name = "BluMusic"
+    project = "BluMusic.xcodeproj"
+    ensure_temp_keychain(keychain_name, keychain_password)
+
+    api_key = app_store_connect_api_key(
+      key_id: APPLE_KEY_ID,
+      issuer_id: APPLE_ISSUER_ID,
+      key_content: APPLE_KEY_CONTENT,
+      is_key_content_base64: true,           
+      duration: 1200,            
+      in_house: false
+    )
+
+    increment_build_number(xcodeproj: project)
+
+    match(
+      type: 'development',
+      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+      git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
+      readonly: true,
+      keychain_name: keychain_name,
+      keychain_password: keychain_password,
+      api_key: api_key
+    )
+
+    match(
+      type: 'appstore',
+      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+      git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
+      readonly: true,
+      keychain_name: keychain_name,
+      keychain_password: keychain_password,
+      api_key: api_key
+    )
+
+    gym(
+      configuration: "Release",
+      project: project,
+      scheme: "BluMusic",
+      output_name: output_name,
+      export_method: "app-store",
+      export_options: {
+        provisioningProfiles: { 
+            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER,
+            DEVELOPER_APP_IDENTIFIER => PROVISIONING_PROFILE_ID
+        }
+      }
+    )
+
+    pilot(
+      apple_id: "#{DEVELOPER_APP_ID}",
+      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+      skip_waiting_for_build_processing: true,
+      skip_submission: true,
+      distribute_external: true,
+      groups: "Blu Music External Group",
+      changelog: "Something that is new here",
+      notify_external_testers: false,
+      ipa: "./#{output_name}.ipa"
+    )
+
+    delete_temp_keychain(keychain_name)
+  end
+
+  desc "Download provisioning profile for development"
+  lane :get_profile do
+    get_provisioning_profile(
+      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+      cert_id: "94SV2F8FUS",
+      development: true,
+      force: true
+    )
+  end
+end
